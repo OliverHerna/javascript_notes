@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black;">
+    
+</body>
+<script>
+    function wrapping(gifts) {
+        const wrappedGifts = [];
+        gifts.forEach((element, index) => {
+            let wrapLenght = element.length + 1;
+            const elementString = '\n*'+element;
+            const correctBegin = elementString.padStart(element.length*2+4, '*') + '*\n'
+            const correctString = correctBegin.padEnd(correctBegin.length + element.length +2 , '*')
+            wrappedGifts.push(correctString)
+        })
+        return [wrappedGifts]
+    }
+
+    const gifts = ['cat', 'game', 'socks']
+    const wrapped = wrapping(gifts)
+
+    console.log(wrapped)
+</script>
+</html>
